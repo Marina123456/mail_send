@@ -4,8 +4,9 @@ if ($_GET["name"]){
 	$message=messageGet($_GET["name"],$_GET["message"]);
 	if (sendMail('marjnazhjrnova@yandex.ru',$message,$_GET["from"])) {
 		echo '1';
-	} else echo '0';
-	phpinfo();
+	} else
+	{
+	phpinfo();}
 }
 function messageGet($name,$message){
 	return 'Имя: '.$name. "\r\n"."Сообщение: ".$message;
