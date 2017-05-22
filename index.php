@@ -3,8 +3,8 @@ header('Content-Type: text/html; charset=utf-8');
 if ($_GET["name"]){
 	$message=messageGet($_GET["name"],$_GET["message"]);
 	if (sendMail('marjnazhjrnova@yandex.ru',$message,$_GET["from"])) {
-		echo json_decode(array('status'=>'1'));
-	} else echo json_decode(array('status'=>'0'));
+		echo '1';
+	} else echo '0';
 }
 function messageGet($name,$message){
 	return 'Имя: '.$name. "\r\n"."Сообщение: ".$message;
@@ -12,7 +12,7 @@ function messageGet($name,$message){
 function sendMail($to,$message,$from){
 
      
-    $subject = getParam('with_portfolio');
+    $subject ='with_portfolio';
 
 
     $body = '<html>'. "\n";
